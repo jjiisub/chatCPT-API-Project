@@ -1,18 +1,20 @@
 const $form = document.querySelector("form");
 const $input = document.querySelector("input");
 const $chatList = document.querySelector("ul");
+const $chatScreen = document.querySelector(".chat-screen");
 
 // openAI API
 let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 
 // 사용자의 질문
-let question;
+let userChat;
 
 // 질문과 답변 저장
 let data = [
   {
     role: "system",
-    content: "assistant는 친절한 답변가이다.",
+    content:
+      "assistant는 영화관 데이트 role play를 영어로 진행한다. assistant는 한 문장 씩 번갈아 가면서 대화하며, 답장을 받기 전까지 기다린다. assistant는 바로 role play의 첫문장으로 대답한다.",
   },
 ];
 
@@ -21,43 +23,70 @@ let questionData = [];
 
 // input에 입력된 질문 받아오는 함수
 $input.addEventListener("input", (e) => {
-  question = e.target.value;
+  userChat = e.target.value;
 });
 
 // 사용자의 질문을 객체를 만들어서 push
-const sendQuestion = (question) => {
-  if (question) {
+const sendUserChat = (userChat) => {
+  if (userChat) {
     data.push({
       role: "user",
-      content: question,
+      content: userChat,
     });
     questionData.push({
       role: "user",
-      content: question,
+      content: userChat,
     });
   }
 };
 
-// 화면에 질문 그려주는 함수
-const printQuestion = async () => {
-  if (question) {
-    let li = document.createElement("li");
-    li.classList.add("question");
-    questionData.map((el) => {
-      li.innerText = el.content;
-    });
-    $chatList.appendChild(li);
+// userChat이 들어갈 userChatBox를 만드는 함수
+const makeUserChatBox = (userChat) => {
+  let userChatBox = document.createElement("div");
+  userChatBox.classList.add("user-chat");
+  let userChatContent = document.createElement("div");
+  userChatContent.classList.add("user-content");
+  userChatContent.innerText = userChat;
+  userChatBox.appendChild(userChatContent);
+  $chatScreen.appendChild(userChatBox);
+};
+
+// 화면에 userChat 그려주는 함수
+const printUserChat = async () => {
+  if (userChat) {
+    makeUserChatBox(userChat);
+    // let li = document.createElement("li");
+    // li.classList.add("userChat");
+    // questionData.map((el) => {
+    //   li.innerText = el.content;
+    // });
+    // $chatList.appendChild(li);
     questionData = [];
-    question = false;
+    userChat = false;
+    keepScrollDown();
   }
 };
 
-// 화면에 답변 그려주는 함수
-const printAnswer = (answer) => {
-  let li = document.createElement("li");
-  li.classList.add("answer");
-  li.innerText = answer;
-  $chatList.appendChild(li);
+// AIChat이 들어갈 AIChatBox를 만드는 함수
+const makeAIChatBox = (AIChat) => {
+  let AIChatBox = document.createElement("div");
+  AIChatBox.classList.add("ai-chat");
+  let AIChatContent = document.createElement("div");
+  AIChatContent.classList.add("ai-content");
+  AIChatContent.innerText = AIChat;
+  AIChatBox.appendChild(AIChatContent);
+  $chatScreen.appendChild(AIChatBox);
+};
+
+// 화면에 AIChat 그려주는 함수
+const printAIChat = (AIChat) => {
+  makeAIChatBox(AIChat);
+  //   let li = document.createElement("li");
+  //   li.classList.add("AIChat");
+  //   li.innerText = AIChat;
+  //   console.log(AIChat.message);
+  //   $chatList.appendChild(li);
+  keepScrollDown();
 };
 
 // api 요청보내는 함수
@@ -72,18 +101,23 @@ const apiPost = async () => {
   })
     .then((res) => res.json())
     .then((res) => {
-      printAnswer(res.choices[0].message.content);
+      printAIChat(res.choices[0].message.content);
     })
     .catch((err) => {
       console.log(err);
     });
 };
 
+function keepScrollDown() {
+  console.log($chatScreen.scrollHeight);
+  $chatScreen.scrollTop = $chatScreen.scrollHeight;
+}
+
 // submit
 $form.addEventListener("submit", (e) => {
   e.preventDefault();
   $input.value = null;
-  sendQuestion(question);
+  sendUserChat(userChat);
   apiPost();
-  printQuestion();
+  printUserChat();
 });

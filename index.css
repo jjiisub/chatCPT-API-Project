@@ -1,0 +1,19 @@
+.chat-screen {
+  height: 200px;
+  overflow: auto;
+  overflow-anchor: none;
+  /* display: flex;
+  flex-direction: column-reverse; */
+}
+
+.ai-chat,
+.user-chat {
+  border: solid 1px black;
+  width: 300px;
+  margin-top: 10px;
+}
+
+.ai-chat {
+  display: flex;
+  align-items: flex-start;
+}
