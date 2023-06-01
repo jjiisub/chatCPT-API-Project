@@ -20,6 +20,13 @@ let data = [
 
 let AIdata = [];
 
+let dataQuestion = [
+  {
+    role: "system",
+    content: "assistant는 영어 선생님이다. 주어진 단락에서 단어의 문법적 의미를 설명하고, 해당 단어가 사용된 예문을 2개 대답한다.",
+  },
+];
+
 // 화면에 뿌려줄 데이터, 질문들
 let questionData = [];
 
@@ -74,9 +81,11 @@ const makeAIChatBox = (AIChat) => {
   AIChat.split(" ").forEach((element) => {
     let AIChatElement = document.createElement("a");
     AIChatElement.classList.add("ai-chat-element");
-    AIChatElement.setAttribute("onclick", `alert("${element}")`);
-    AIChatElement.setAttribute("id", `${AIdata.length})`);
-
+    // AIChatElement.setAttribute("onclick", `tmp(${AIdata.length},"${element}");`);
+    AIChatElement.addEventListener("click", function (event) {
+      apiQuestionPost(AIdata.length, element);
+    });
+    // AIChatElement.setAttribute("id", `${AIdata.length})`);
     AIChatElement.innerText = element;
     AIChatBox.appendChild(AIChatElement);
   });
@@ -90,8 +99,8 @@ const printAIChat = (AIChat) => {
   keepScrollDown();
 };
 
-// api 요청보내는 함수
-const apiPost = async () => {
+// 채팅 api 요청보내는 함수
+const apiChatPost = async () => {
   const result = await fetch(url, {
     method: "POST",
     headers: {
@@ -116,9 +125,40 @@ const apiPost = async () => {
     });
 };
 
+// 문법 질문 api 요청 함수
+const apiQuestionPost = async (index, word) => {
+  dataQuestion.push({
+    role: "user",
+    content: `${AIdata[index - 1].content}에서 ${word}의 의미를 자세히 설명해줘`,
+  });
+  //   let dataQuestion = [
+  //     {role:}
+
+  //   ];
+  console.log(dataQuestion);
+  const result = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(dataQuestion),
+    redirect: "follow",
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      alert(res.choices[0].message.content);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+// function tmp(a, b) {
+//   console.log(AIdata[a - 1].content, b);
+// }
+
 // 항상 가장 밑에 스크롤을 유지하는 함수
 function keepScrollDown() {
-  console.log(AIdata);
   $chatScreen.scrollTop = $chatScreen.scrollHeight;
 }
 
@@ -127,6 +167,6 @@ $form.addEventListener("submit", (e) => {
   e.preventDefault();
   $input.value = null;
   sendUserChat(userChat);
-  apiPost();
+  apiChatPost();
   printUserChat();
 });

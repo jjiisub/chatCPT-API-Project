@@ -59,5 +59,10 @@ p {
 .ai-chat-element:hover {
   font-style: italic;
   text-decoration: underline;
-  /* background-color: red; */
 }
+
+[Log] Object (index.js, line 138)
+
+/* error: {message: "{'role': 'user', 'content': 'Hi there, how are you…대한 자세히 설명해줘'} is not of type 'array' - 'messages'", type: "invalid_request_error", param: null, code: null}
+
+Object 견본 */
