@@ -135,7 +135,7 @@ const apiQuestionPost = async (index, word) => {
   //     {role:}
 
   //   ];
-  console.log(dataQuestion);
+  //   console.log(dataQuestion);
   const result = await fetch(url, {
     method: "POST",
     headers: {
@@ -147,6 +147,7 @@ const apiQuestionPost = async (index, word) => {
     .then((res) => res.json())
     .then((res) => {
       alert(res.choices[0].message.content);
+      dataQuestion.splice(1, 1);
     })
     .catch((err) => {
       console.log(err);
