@@ -1,9 +1,31 @@
+body,
+h1,
+h2,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.chat-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .chat-screen {
-  height: 200px;
-  overflow: auto;
-  overflow-anchor: none;
+  margin-top: 50px;
   /* display: flex;
-  flex-direction: column-reverse; */
+  flex-direction: column; */
+  /* align-items: ; */
+}
+
+.chat-screen {
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  height: 600px;
+  width: 500px;
+  overflow: auto;
 }
 
 .ai-chat,
@@ -11,9 +33,19 @@
   border: solid 1px black;
   width: 300px;
   margin-top: 10px;
+  padding: 5px;
 }
 
 .ai-chat {
   display: flex;
   align-items: flex-start;
+  background-color: yellowgreen;
+}
+
+.user-chat {
+  background-color: aqua;
+  margin-left: auto;
+  display: flex;
+  /* align-content: end; */
+  justify-items: flex-end;
 }
