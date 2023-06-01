@@ -18,6 +18,8 @@ let data = [
   },
 ];
 
+let AIdata = [];
+
 // 화면에 뿌려줄 데이터, 질문들
 let questionData = [];
 
@@ -55,12 +57,6 @@ const makeUserChatBox = (userChat) => {
 const printUserChat = async () => {
   if (userChat) {
     makeUserChatBox(userChat);
-    // let li = document.createElement("li");
-    // li.classList.add("userChat");
-    // questionData.map((el) => {
-    //   li.innerText = el.content;
-    // });
-    // $chatList.appendChild(li);
     questionData = [];
     userChat = false;
     keepScrollDown();
@@ -71,21 +67,26 @@ const printUserChat = async () => {
 const makeAIChatBox = (AIChat) => {
   let AIChatBox = document.createElement("div");
   AIChatBox.classList.add("ai-chat");
-  let AIChatContent = document.createElement("div");
-  AIChatContent.classList.add("ai-content");
-  AIChatContent.innerText = AIChat;
-  AIChatBox.appendChild(AIChatContent);
+  //   let AIChatContent = document.createElement("div");
+  //   AIChatContent.classList.add("ai-content");
+  //   AIChatContent.innerText = AIChat;
+  //   AIChatBox.appendChild(AIChatContent);
+  AIChat.split(" ").forEach((element) => {
+    let AIChatElement = document.createElement("a");
+    AIChatElement.classList.add("ai-chat-element");
+    AIChatElement.setAttribute("onclick", `alert("${element}")`);
+    AIChatElement.setAttribute("id", `${AIdata.length})`);
+
+    AIChatElement.innerText = element;
+    AIChatBox.appendChild(AIChatElement);
+  });
   $chatScreen.appendChild(AIChatBox);
 };
 
 // 화면에 AIChat 그려주는 함수
 const printAIChat = (AIChat) => {
   makeAIChatBox(AIChat);
-  //   let li = document.createElement("li");
-  //   li.classList.add("AIChat");
-  //   li.innerText = AIChat;
-  //   console.log(AIChat.message);
-  //   $chatList.appendChild(li);
+
   keepScrollDown();
 };
 
@@ -101,6 +102,13 @@ const apiPost = async () => {
   })
     .then((res) => res.json())
     .then((res) => {
+      data.push({
+        role: "system",
+        content: res.choices[0].message.content,
+      });
+      AIdata.push({
+        content: res.choices[0].message.content,
+      });
       printAIChat(res.choices[0].message.content);
     })
     .catch((err) => {
@@ -108,8 +116,9 @@ const apiPost = async () => {
     });
 };
 
+// 항상 가장 밑에 스크롤을 유지하는 함수
 function keepScrollDown() {
-  console.log($chatScreen.scrollHeight);
+  console.log(AIdata);
   $chatScreen.scrollTop = $chatScreen.scrollHeight;
 }
 

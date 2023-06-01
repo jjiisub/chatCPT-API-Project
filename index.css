@@ -38,14 +38,26 @@ p {
 
 .ai-chat {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
-  background-color: yellowgreen;
+  background-color: rgb(230, 255, 148);
 }
 
 .user-chat {
-  background-color: aqua;
+  background-color: rgb(255, 221, 221);
   margin-left: auto;
   display: flex;
   /* align-content: end; */
   justify-items: flex-end;
+}
+
+.ai-chat-element {
+  display: flex;
+  padding-left: 5px;
+}
+
+.ai-chat-element:hover {
+  font-style: italic;
+  text-decoration: underline;
+  /* background-color: red; */
 }
