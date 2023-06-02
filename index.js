@@ -157,7 +157,8 @@ const apiQuestionPost = async (index, word) => {
     .then((res) => {
       // loadingMask 종료 함수 실행
       SwitchLoad();
-      alert(res.choices[0].message.content);
+      SwitchModal(res.choices[0].message.content, index);
+      //   alert(res.choices[0].message.content);
       dataQuestion.splice(1, 1);
     })
     .catch((err) => {
@@ -183,3 +184,27 @@ function SwitchLoad() {
   let loaderContainer = document.querySelector(".loader-container");
   loaderContainer.classList.toggle("show");
 }
+
+// Modal
+let Modal = document.querySelector(".modal");
+function SwitchModal(message, index) {
+  Modal.classList.toggle("hidden");
+
+  if (message) {
+    let modalContent = document.querySelector(".modal-content");
+    modalContent.innerText = message;
+  }
+
+  if (index) {
+    let modalQuestion = document.querySelector(".modal-question");
+    modalQuestion.innerText = AIdata[index - 1].content;
+  }
+}
+
+// let modalBackground = document.querySelector(".modal-background");
+// modalBackground.addEventListener("click", SwitchModal);
+// let btn = document.querySelector(".open-modal");
+// btn.addEventListener("click", SwitchModal);
+
+let closeBtn = document.querySelector(".btn-close-modal");
+closeBtn.addEventListener("click", SwitchModal);
