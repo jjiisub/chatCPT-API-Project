@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
+
 body,
 h1,
 h2,
@@ -44,6 +46,7 @@ form {
 .chat-input-text {
   width: 450px;
   height: 40px;
+  font-size: large;
   /* height:  */
 }
 
@@ -58,8 +61,10 @@ form {
 
 .ai-chat,
 .user-chat {
+  font-family: "Gamja Flower", cursive;
+  font-size: 180%;
   border: solid 1px black;
-  width: 300px;
+  width: 400px;
   margin-top: 20px;
   padding: 5px;
 }
@@ -91,4 +96,26 @@ form {
 .ai-chat-element:hover {
   font-style: italic;
   text-decoration: underline;
+}
+
+#mask {
+  /* width: maskWidth;
+  height: maskHeight; */
+  opacity: "0.3";
+}
+
+.loader-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background: #000;
+  z-index: 1;
+  opacity: 0.4;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-container.show {
+  display: flex;
 }

@@ -1,3 +1,4 @@
+const $body = document.querySelector("body");
 const $form = document.querySelector("form");
 const $input = document.querySelector("input");
 const $chatList = document.querySelector("ul");
@@ -101,6 +102,7 @@ const printAIChat = (AIChat) => {
 
 // 채팅 api 요청보내는 함수
 const apiChatPost = async () => {
+  SwitchLoad();
   const result = await fetch(url, {
     method: "POST",
     headers: {
@@ -111,6 +113,7 @@ const apiChatPost = async () => {
   })
     .then((res) => res.json())
     .then((res) => {
+      SwitchLoad();
       data.push({
         role: "system",
         content: res.choices[0].message.content,
@@ -127,15 +130,14 @@ const apiChatPost = async () => {
 
 // 문법 질문 api 요청 함수
 const apiQuestionPost = async (index, word) => {
+  // loadingMask function 실행
+  SwitchLoad();
+
   dataQuestion.push({
     role: "user",
     content: `${AIdata[index - 1].content}에서 ${word}의 의미를 자세히 설명해줘`,
   });
-  //   let dataQuestion = [
-  //     {role:}
 
-  //   ];
-  //   console.log(dataQuestion);
   const result = await fetch(url, {
     method: "POST",
     headers: {
@@ -146,6 +148,8 @@ const apiQuestionPost = async (index, word) => {
   })
     .then((res) => res.json())
     .then((res) => {
+      // loadingMask 종료 함수 실행
+      SwitchLoad();
       alert(res.choices[0].message.content);
       dataQuestion.splice(1, 1);
     })
@@ -153,10 +157,6 @@ const apiQuestionPost = async (index, word) => {
       console.log(err);
     });
 };
-
-// function tmp(a, b) {
-//   console.log(AIdata[a - 1].content, b);
-// }
 
 // 항상 가장 밑에 스크롤을 유지하는 함수
 function keepScrollDown() {
@@ -171,3 +171,8 @@ $form.addEventListener("submit", (e) => {
   apiChatPost();
   printUserChat();
 });
+
+function SwitchLoad() {
+  let loaderContainer = document.querySelector(".loader-container");
+  loaderContainer.classList.toggle("show");
+}
