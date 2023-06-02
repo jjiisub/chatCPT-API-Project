@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
+
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap");
 
 body,
@@ -61,16 +64,21 @@ form {
 }
 
 .user-chat {
-  margin-left: 50px;
-  margin-top: 20px;
-  margin: 20px 0 20px 50px;
+  /* margin-left: 50px; */
+  margin: 10px 0 10px 50px;
+}
+
+.ai-chat {
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .ai-chat-content,
 .user-chat-content {
-  font-family: "Gamja Flower", cursive;
+  /* font-family: "Gamja Flower", cursive; */
+  font-family: "Sriracha", cursive;
   border: solid 1px black;
-  font-size: 180%;
+  font-size: 150%;
   /* width: 400px; */
   /* margin-top: 20px; */
   padding: 5px;
@@ -179,6 +187,7 @@ form {
   margin-bottom: 10px;
   z-index: 2;
   width: 500px;
+  text-align: center;
 }
 
 .hidden {
