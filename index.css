@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap");
 
 body,
 h1,
@@ -168,13 +169,16 @@ form {
   background-color: #ffffff;
   flex-wrap: wrap;
   z-index: 2;
-  font-size: large;
+  font-size: 120%;
+  line-height: 130%;
+  font-family: "Nanum Gothic", sans-serif;
 }
 
 .modal-question.ai-chat-content {
   margin: 0;
   margin-bottom: 10px;
   z-index: 2;
+  width: 500px;
 }
 
 .hidden {
