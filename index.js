@@ -15,7 +15,7 @@ let data = [
   {
     role: "system",
     content:
-      "assistant는 영화관 데이트 role play를 영어로 진행한다. assistant는 한 문장 씩 번갈아 가면서 대화하며, 답장을 받기 전까지 기다린다. assistant는 바로 role play의 첫문장으로 대답한다.",
+      "assistant는 role play를 영어로 진행한다. assistant는 한 문장 씩 번갈아 가면서 대화하며, 답장을 받기 전까지 기다린다. assistant는 바로 role play의 첫문장으로 대답한다. Assistant의 역할은 user가 기르는 고양이이다. assistant의 이름은 bori 이다. 모든 문장의 마지막에는 meow를 붙인다.",
   },
 ];
 
@@ -25,7 +25,7 @@ let dataQuestion = [
   {
     role: "system",
     content:
-      "assistant는 영어 선생님이다. 질문은 '단락'에서 '단어'의 의미를 자세히 알려줘 의 형태이다. 답변은 다음의 내용이 모두 포함되게 한다. 1. 주어진 단어의 의미설명 2. 주어진 단락에서 주어진 단어의 문법 설명 3. 주어진 문장의 한글 해석 4. 주어진 단어가 사용된 2개의 예문과 각 예문의 해석",
+      "assistant는 친절한 영어 선생님이다. 질문은 ('단락'에서 '단어'의 의미를 자세히 알려줘) 의 형태이다. 답변은 다음의 내용이 모두 포함되게 한다. 1. 주어진 단어의 의미설명 2. 주어진 단락에서 주어진 단어의 문법 설명 3. 주어진 문장의 한글 해석 4. 주어진 단어가 사용된 2개의 예문과 각 예문의 해석",
   },
 ];
 
@@ -56,7 +56,7 @@ const makeUserChatBox = (userChat) => {
   let userChatBox = document.createElement("div");
   userChatBox.classList.add("user-chat");
   let userChatContent = document.createElement("div");
-  userChatContent.classList.add("user-content");
+  userChatContent.classList.add("user-chat-content");
   userChatContent.innerText = userChat;
   userChatBox.appendChild(userChatContent);
   $chatScreen.appendChild(userChatBox);
@@ -76,10 +76,16 @@ const printUserChat = async () => {
 const makeAIChatBox = (AIChat) => {
   let AIChatBox = document.createElement("div");
   AIChatBox.classList.add("ai-chat");
-  //   let AIChatContent = document.createElement("div");
-  //   AIChatContent.classList.add("ai-content");
-  //   AIChatContent.innerText = AIChat;
-  //   AIChatBox.appendChild(AIChatContent);
+
+  let AIImg = document.createElement("img");
+  AIImg.classList.add("ai-img");
+  AIImg.setAttribute("src", "./img/cat.JPG");
+  AIChatBox.appendChild(AIImg);
+
+  let AIChatContent = document.createElement("div");
+  AIChatContent.classList.add("ai-chat-content");
+  AIChatBox.appendChild(AIChatContent);
+
   AIChat.split(" ").forEach((element) => {
     let AIChatElement = document.createElement("a");
     AIChatElement.classList.add("ai-chat-element");
@@ -89,7 +95,7 @@ const makeAIChatBox = (AIChat) => {
     });
     // AIChatElement.setAttribute("id", `${AIdata.length})`);
     AIChatElement.innerText = element;
-    AIChatBox.appendChild(AIChatElement);
+    AIChatContent.appendChild(AIChatElement);
   });
   $chatScreen.appendChild(AIChatBox);
 };
