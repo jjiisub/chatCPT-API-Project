@@ -23,8 +23,8 @@ p {
   height: 700px;
   width: 520px;
   overflow: auto;
-  /* mask-image: linear-gradient(0deg, transparent 0%, black 10%);
-  -webkit-mask-image: linear-gradient(0deg, transparent 0%, black 10%); */
+  mask-image: linear-gradient(180deg, transparent 0%, black 10%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 10%);
 }
 
 .chat-input {
