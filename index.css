@@ -70,7 +70,6 @@ form {
 }
 
 .user-chat {
-  /* margin-left: 50px; */
   margin: 10px 0 10px 50px;
 }
 
@@ -81,16 +80,14 @@ form {
 
 .ai-chat-content,
 .user-chat-content {
-  /* font-family: "Gamja Flower", cursive; */
   font-family: "Sriracha", cursive;
   border: solid 1px black;
   font-size: 150%;
-  /* width: 400px; */
-  /* margin-top: 20px; */
   padding: 5px;
-  /* text-align: center; */
+  text-align: center;
   /* align-items: center; */
   width: fit-content;
+  /* justify-content: space-between; */
 }
 
 .ai-chat-content {
