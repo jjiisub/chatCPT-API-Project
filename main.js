@@ -19,7 +19,7 @@ let data = [
   },
   {
     role: "user",
-    content: "Hi, What is your name?",
+    content: "Hi, What is your name? introduce yourself",
   },
 ];
 

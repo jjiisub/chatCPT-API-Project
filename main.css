@@ -87,7 +87,7 @@ form {
 .ai-chat-content,
 .user-chat-content {
   font-family: "Sriracha", cursive;
-  border: solid 1px black;
+  /* border: solid 1px black; */
   font-size: 150%;
   padding: 5px;
   width: fit-content;
@@ -98,6 +98,7 @@ form {
   flex-wrap: wrap;
   align-items: flex-start;
   background-color: rgb(230, 255, 148);
+  border: 1px solid rgb(170, 189, 110);
   border-radius: 0 50px 50px 50px;
   padding-left: 20px;
   padding-right: 20px;
@@ -112,6 +113,7 @@ form {
 
 .user-chat-content {
   background-color: rgb(255, 221, 221);
+  border: 1px solid rgb(224, 178, 178);
   margin-left: auto;
   display: flex;
   /* align-content: end; */
@@ -219,6 +221,11 @@ form {
   .chat-screen,
   .chat-input {
     width: 90%;
+  }
+
+  .ai-chat-content,
+  .user-chat-content {
+    font-size: 120%;
   }
 
   .modal-content {
