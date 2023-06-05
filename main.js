@@ -39,7 +39,7 @@ let dataQuestion = [
   {
     role: "assistant",
     content:
-      "'As'의 의미를 설명해드릴게요.\n\n1. 단어 의미\n'As' 역할이나 용도의 의미를 가집니다.\n\n2. 문법 설명\n문장에서 'As your cat'은 '당신의 고양이로서, 고양이이므로'의 뜻으로 사용되었습니다. 이 문장은 고양이가 당신에게 위로와 동반자를 제공할 수 있다는 것을 나타냅니다.\n\n3. 문장 해석\n'당신의 고양이로서, 나는 감정적 지원과 동반자를 제공할 수 있어요. 야옹.'\n\n4. 예시:\n - As a doctor, I have to follow strict hygiene guidelines. (의사로서, 저는 엄격한 위생 지침을 따라야 합니다.)\n - As a vegetarian, I don't eat meat. (채식주의자로서, 저는 고기를 먹지 않습니다.)",
+      "'As'에 대해 설명해드릴게요.\n\n1. 단어 의미\n'As' 역할이나 용도의 의미를 가집니다.\n\n2. 문법 설명\n문장에서 'As your cat'은 '당신의 고양이로서, 고양이이므로'의 뜻으로 사용되었습니다. 이 문장은 고양이가 당신에게 위로와 동반자를 제공할 수 있다는 것을 나타냅니다.\n\n3. 문장 해석\n'당신의 고양이로서, 나는 감정적 지원과 동반자를 제공할 수 있어요. 야옹.'\n\n4. 예시:\n - As a doctor, I have to follow strict hygiene guidelines. (의사로서, 저는 엄격한 위생 지침을 따라야 합니다.)\n - As a vegetarian, I don't eat meat. (채식주의자로서, 저는 고기를 먹지 않습니다.)",
   },
 ];
 
