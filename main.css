@@ -229,7 +229,7 @@ form {
 
 @media screen and (max-width: 542px) {
   .chat-page {
-    height: 90%;
+    height: 99%;
   }
   .chat-screen,
   .chat-input {
