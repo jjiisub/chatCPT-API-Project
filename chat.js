@@ -66,7 +66,7 @@ const makeAIChatBox = (AIChat, AIdata, dataQuestion) => {
     let AIChatElement = document.createElement("a");
     AIChatElement.classList.add("ai-chat-element");
     AIChatElement.addEventListener("click", function (event) {
-      apiQuestionPost(AIdata, element, dataQuestion);
+      apiQuestionPost(AIChat, element, dataQuestion);
     });
     AIChatElement.innerText = element;
     AIChatContent.appendChild(AIChatElement);

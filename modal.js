@@ -2,7 +2,7 @@ export { SwitchModal };
 
 // Modal
 let Modal = document.querySelector(".modal");
-function SwitchModal(message, AIdata, index) {
+function SwitchModal(message, AIChat) {
   Modal.classList.toggle("hidden");
 
   if (message) {
@@ -10,9 +10,9 @@ function SwitchModal(message, AIdata, index) {
     modalContent.innerText = message;
   }
 
-  if (index) {
+  if (AIChat) {
     let modalQuestion = document.querySelector(".modal-question");
-    modalQuestion.innerText = AIdata[index - 1].content;
+    modalQuestion.innerText = AIChat;
   }
 }
 
