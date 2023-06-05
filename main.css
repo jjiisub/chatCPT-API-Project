@@ -223,12 +223,14 @@ form {
   border-bottom: 7px solid #002d70;
 }
 
-@media screen and (max-width: 480px) {
-  .chat-screen .chat-input {
+@media screen and (max-width: 542px) {
+  .chat-screen,
+  .chat-input {
     width: 100%;
     background-color: tomato;
   }
-  .ai-chat-content .user-chat-content {
+  .ai-chat-content,
+  .user-chat-content {
     background-color: tomato;
   }
   .chat-page {
