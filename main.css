@@ -98,7 +98,7 @@ form {
   flex-wrap: wrap;
   align-items: flex-start;
   background-color: rgb(230, 255, 148);
-  border: 1px solid rgb(170, 189, 110);
+  border: 1px solid rgb(193, 214, 125);
   border-radius: 0 50px 50px 50px;
   padding-left: 20px;
   padding-right: 20px;
@@ -189,7 +189,7 @@ form {
   margin-bottom: 10px;
   z-index: 2;
   width: 400px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .hidden {
