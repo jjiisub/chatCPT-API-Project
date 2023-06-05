@@ -1,4 +1,3 @@
-import { SwitchLoad } from "./loading.js";
 import { printAIChat, printUserChat, apiChatPost } from "./chat.js";
 
 const $body = document.querySelector("body");
