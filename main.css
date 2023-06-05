@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap");
-
+/* @import url("https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap");
 
 body,
@@ -19,13 +17,15 @@ body {
 }
 
 .chat-page {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .chat-screen {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   background-color: #eee;
   padding: 10px;
   border-radius: 10px 10px 0 0;
@@ -221,4 +221,17 @@ form {
   background-color: #002d70;
   border-left: 7px solid #002d70;
   border-bottom: 7px solid #002d70;
+}
+
+@media screen and (max-width: 480px) {
+  .chat-screen .chat-input {
+    width: 100%;
+    background-color: tomato;
+  }
+  .ai-chat-content .user-chat-content {
+    background-color: tomato;
+  }
+  .chat-page {
+    background-color: greenyellow;
+  }
 }
