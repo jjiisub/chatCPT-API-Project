@@ -1,17 +1,19 @@
-import { printAIChat, printUserChat, apiChatPost } from "./chat.js";
+import { printUserChat, apiChatPost } from "./chat.js";
+// import { makeModalContainer } from "./build.js";
 
-const $body = document.querySelector("body");
 const $form = document.querySelector("form");
 const $input = document.querySelector("input");
 
-// openAI API
-let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
+// // build HTML
+// document.addEventListener("DOMContentLoaded", function () {
+//   makeModalContainer();
+// });
 
 // 사용자의 질문
 let userChat;
 
 // 질문과 답변 저장
-let data = [
+const data = [
   {
     role: "system",
     content:
@@ -19,13 +21,13 @@ let data = [
   },
   {
     role: "user",
-    content: "Hi, What is your name? introduce yourself",
+    content: "Introduce your name, age, species.",
   },
 ];
 
-let AIdata = [];
+const AIdata = [];
 
-let dataQuestion = [
+const dataQuestion = [
   {
     role: "system",
     content:

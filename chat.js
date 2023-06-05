@@ -1,33 +1,12 @@
 import { SwitchLoad } from "./loading.js";
 import { apiQuestionPost } from "./question.js";
-export { printUserChat, printAIChat, apiChatPost };
+export { printUserChat, apiChatPost };
 
 const $chatScreen = document.querySelector(".chat-screen");
 
 // openAI API
-let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
+const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 
-// 사용자의 질문
-// let userChat;
-
-// 화면에 뿌려줄 데이터, 질문들
-// let questionData = [];
-
-// let data = [
-//   {
-//     role: "system",
-//     content:
-//       "Assistant will conduct a role play in English. Assistant will respond with one sentence at a time, taking turns in the conversation and waiting for a response before replying. Assistant is a cat owned by the user. The assistant's name is Bori. At the end of each sentence, add 'meow.'",
-//   },
-//   {
-//     role: "user",
-//     content: "Hi, What is your name?",
-//   },
-// ];
-
-// let AIdata = [];
-
-// userChat이 들어갈 userChatBox를 만드는 함수
 const makeUserChatBox = (userChat) => {
   let userChatBox = document.createElement("div");
   userChatBox.classList.add("user-chat");

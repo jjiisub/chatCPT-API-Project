@@ -2,7 +2,7 @@ import { SwitchLoad } from "./loading.js";
 import { SwitchModal } from "./modal.js";
 export { apiQuestionPost };
 
-let url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
+const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 
 // 문법 질문 api 요청 함수
 const apiQuestionPost = async (AIChat, word, dataQuestion) => {
@@ -34,7 +34,7 @@ const apiQuestionPost = async (AIChat, word, dataQuestion) => {
         role: "assistant",
         content: res.choices[0].message.content,
       });
-      //   dataQuestion.splice(1, 1);
+
       console.log("dataQ", dataQuestion);
     })
     .catch((err) => {
