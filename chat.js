@@ -100,7 +100,7 @@ const apiChatPost = async (data, AIdata, dataQuestion) => {
     .then((res) => {
       SwitchLoad();
       data.push({
-        role: "system",
+        role: "assistant",
         content: res.choices[0].message.content,
       });
       AIdata.push({
