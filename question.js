@@ -15,7 +15,6 @@ const apiQuestionPost = async (AIdata, word, dataQuestion) => {
     role: "user",
     content: `${AIdata[index - 1].content}에서 ${word}의 의미를 자세히 설명해줘`,
   });
-  console.log(dataQuestion);
 
   const result = await fetch(url, {
     method: "POST",
@@ -30,7 +29,12 @@ const apiQuestionPost = async (AIdata, word, dataQuestion) => {
       // loadingMask 종료 함수 실행
       SwitchLoad();
       SwitchModal(res.choices[0].message.content, AIdata, index);
-      dataQuestion.splice(1, 1);
+      dataQuestion.push({
+        role: "assistant",
+        content: res.choices[0].message.content,
+      });
+      //   dataQuestion.splice(1, 1);
+      console.log("dataQ", dataQuestion);
     })
     .catch((err) => {
       console.log(err);

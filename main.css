@@ -181,6 +181,7 @@ form {
 .modal-content {
   width: 400px;
   height: fit-content;
+  overflow: auto;
   padding: 20px;
   border-radius: 10px 10px 0 0;
   background-color: #ffffff;
@@ -213,7 +214,7 @@ form {
   background-color: royalblue;
   /* border-radius: 10px 0; */
   width: 440px;
-  height: 40px;
+  height: 46px;
 }
 
 .btn-close-modal:hover {
