@@ -69,6 +69,12 @@ form {
   border-radius: 4px;
 }
 
+.chat-input-button:hover {
+  background-color: #002d70;
+  border-left: 7px solid #002d70;
+  border-bottom: 7px solid #002d70;
+}
+
 .user-chat {
   margin: 10px 0 10px 50px;
 }
@@ -211,5 +217,7 @@ form {
 }
 
 .btn-close-modal:hover {
-  background-color: #83b5ff;
+  background-color: #002d70;
+  border-left: 7px solid #002d70;
+  border-bottom: 7px solid #002d70;
 }
