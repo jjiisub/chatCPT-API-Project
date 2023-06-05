@@ -194,6 +194,8 @@ form {
   font-size: 120%;
   line-height: 130%;
   font-family: "Nanum Gothic", sans-serif;
+  mask-image: linear-gradient(0deg, transparent 0%, black 2%);
+  -webkit-mask-image: linear-gradient(0deg, transparent 0%, black 2%);
 }
 
 .modal-question.ai-chat-content {
@@ -239,8 +241,12 @@ form {
   .modal-content {
     width: 80%;
     height: 400px;
-    mask-image: linear-gradient(0deg, transparent 0%, black 2%);
-    -webkit-mask-image: linear-gradient(0deg, transparent 0%, black 2%);
+  }
+
+  .btn-close-modal {
+    width: 88%;
+    /* padding-left: 20px;
+    padding-right: 20px; */
   }
 
   .modal-question.ai-chat-content {
