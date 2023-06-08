@@ -13,7 +13,6 @@ const apiQuestionPost = async (AIChat, word, dataQuestion) => {
 
   dataQuestion.push({
     role: "user",
-    // content: `${AIdata[index - 1].content}에서 ${word}의 의미를 자세히 설명해줘`,
     content: `${AIChat}에서 ${word}의 의미를 자세히 설명해줘`,
   });
 
