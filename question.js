@@ -8,7 +8,7 @@ const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 const apiQuestionPost = async (AIChat, word, dataQuestion) => {
   //   const index = AIdata.length;
   //   console.log(AIdata, index);
-  // loadingMask function 실행
+  // SwitchLoad function 실행
   SwitchLoad();
 
   dataQuestion.push({
@@ -26,7 +26,7 @@ const apiQuestionPost = async (AIChat, word, dataQuestion) => {
   })
     .then((res) => res.json())
     .then((res) => {
-      // loadingMask 종료 함수 실행
+      // SwitchLoad 종료 함수 실행
       SwitchLoad();
       SwitchModal(res.choices[0].message.content, AIChat);
       dataQuestion.push({
