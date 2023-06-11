@@ -13,6 +13,7 @@ const $input = document.querySelector("input");
 let userChat;
 
 // 질문과 답변 저장
+// assistant 특성 반영
 const data = [
   {
     role: "system",
