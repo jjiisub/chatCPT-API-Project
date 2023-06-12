@@ -1,8 +1,25 @@
 import { SwitchLoad } from "./loading.js";
-import { apiQuestionPost } from "./question.js";
-export { printUserChat, apiChatPost };
+import { apiQuestionPost, dataQuestion } from "./question.js";
+export { printUserChat, apiChatPost, saveUserChat };
 
 const $chatScreen = document.querySelector(".chat-screen");
+
+const dataChat = [
+  {
+    role: "system",
+    content: `
+      Assistant will conduct a role play in English.
+      Assistant should always answer in english, even when requested to answer in a different language.
+      Assistant will respond with one sentence at a time, taking turns in the conversation and waiting for a response before replying.
+      Assistant is a 1 year old female Persian cat owned by the user.
+      The assistant's name is Bori.
+      At the end of each sentence, add 'meow.'`,
+  },
+  {
+    role: "user",
+    content: "Introduce your name, age, species.",
+  },
+];
 
 // openAI API
 const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
@@ -21,26 +38,26 @@ const makeUserChatBox = (userChat) => {
 const printUserChat = async (userChat) => {
   if (userChat) {
     makeUserChatBox(userChat);
-    // questionData = [];
     userChat = false;
     keepScrollDown();
   }
 };
 
 // AIChat이 들어갈 AIChatBox를 만드는 함수
-const makeAIChatBox = (AIChat, AIdata, dataQuestion) => {
+const makeAIChatBox = (AIChat) => {
   let AIChatBox = document.createElement("div");
   AIChatBox.classList.add("ai-chat");
 
   let AIImg = document.createElement("img");
   AIImg.classList.add("ai-img");
-  AIImg.setAttribute("src", "./img/cat.JPG");
+  AIImg.setAttribute("src", "asset/img/profile_default_cat.JPG");
   AIChatBox.appendChild(AIImg);
 
   let AIChatContent = document.createElement("div");
   AIChatContent.classList.add("ai-chat-content");
   AIChatBox.appendChild(AIChatContent);
 
+  // AI Chat의 각 단어 click 시 질문 event
   AIChat.split(" ").forEach((element) => {
     let AIChatElement = document.createElement("a");
     AIChatElement.classList.add("ai-chat-element");
@@ -54,8 +71,8 @@ const makeAIChatBox = (AIChat, AIdata, dataQuestion) => {
 };
 
 // 화면에 AIChat 그려주는 함수
-const printAIChat = (AIChat, AIdata, dataQuestion) => {
-  makeAIChatBox(AIChat, AIdata, dataQuestion);
+const printAIChat = (AIChat) => {
+  makeAIChatBox(AIChat);
   keepScrollDown();
 };
 
@@ -64,28 +81,38 @@ function keepScrollDown() {
   $chatScreen.scrollTop = $chatScreen.scrollHeight;
 }
 
+// 사용자의 질문을 객체를 만들어서 push
+const saveUserChat = (userChat) => {
+  if (userChat) {
+    dataChat.push({
+      role: "user",
+      content: userChat,
+    });
+  }
+};
+
 // 채팅 api 요청보내는 함수
-const apiChatPost = async (data, AIdata, dataQuestion) => {
+const apiChatPost = async (AIdata) => {
   SwitchLoad();
   const result = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(dataChat),
     redirect: "follow",
   })
     .then((res) => res.json())
     .then((res) => {
       SwitchLoad();
-      data.push({
+      dataChat.push({
         role: "assistant",
         content: res.choices[0].message.content,
       });
       AIdata.push({
         content: res.choices[0].message.content,
       });
-      printAIChat(res.choices[0].message.content, AIdata, dataQuestion);
+      printAIChat(res.choices[0].message.content);
     })
     .catch((err) => {
       console.log(err);

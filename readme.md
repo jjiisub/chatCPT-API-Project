@@ -30,12 +30,19 @@
 ### 3.1 프로젝트 구조
 
 ```bash
-  └─ aaa
-      │  bbb
-      │  bbb
-      │
-      ├─bbb
-      │  │  bbb.py
-      │  │  bbb.py
-...중략...
+├── asset
+│   ├── gif
+│   │   └── loadingImg.gif
+│   └── img
+│       └── profile_default_cat.jpg
+├── component
+│   ├── build.js
+│   ├── chat.js
+│   ├── loading.js
+│   ├── modal.js
+│   └── question.js
+├── index.html
+├── index.css
+├── main.js
+└── readme.md
 ```
