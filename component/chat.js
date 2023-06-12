@@ -51,7 +51,7 @@ const makeAIChatBox = (AIChat) => {
 
   let AIImg = document.createElement("img");
   AIImg.classList.add("ai-img");
-  AIImg.setAttribute("src", "asset/img/profile_default_cat.JPG");
+  AIImg.setAttribute("src", "asset/img/profile_default_cat.jpg");
   AIChatBox.appendChild(AIImg);
 
   let AIChatContent = document.createElement("div");
