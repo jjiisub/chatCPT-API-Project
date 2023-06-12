@@ -282,3 +282,8 @@ form {
     width: 80%;
   }
 }
+
+.tmpImg {
+  width: 100px;
+  height: 100px;
+}

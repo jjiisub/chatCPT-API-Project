@@ -1,6 +1,7 @@
 import { switchLoad } from "./loading.js";
 import { apiQuestionPost, dataQuestion } from "./question.js";
 export { printUserChat, apiChatPost, saveUserChat };
+export { imgUrl };
 
 const $chatScreen = document.querySelector(".chat-screen");
 
@@ -24,6 +25,10 @@ const dataChat = [
 
 // openAI API
 const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
+
+// AI profile img URL
+const imgUrl = [];
+imgUrl.push("asset/img/profile_default_cat.jpg");
 
 const makeUserChatBox = (userChat) => {
   const userChatBox = document.createElement("div");
@@ -51,7 +56,7 @@ const makeAIChatBox = (aiChat) => {
 
   const aiImg = document.createElement("img");
   aiImg.classList.add("ai-img");
-  aiImg.setAttribute("src", "asset/img/profile_default_cat.jpg");
+  aiImg.setAttribute("src", imgUrl[imgUrl.length - 1]);
   aiChatBox.appendChild(aiImg);
 
   const aiChatContent = document.createElement("div");
