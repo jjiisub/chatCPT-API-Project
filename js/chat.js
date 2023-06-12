@@ -1,4 +1,4 @@
-import { SwitchLoad } from "./loading.js";
+import { switchLoad } from "./loading.js";
 import { apiQuestionPost, dataQuestion } from "./question.js";
 export { printUserChat, apiChatPost, saveUserChat };
 
@@ -26,9 +26,9 @@ const dataChat = [
 const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 
 const makeUserChatBox = (userChat) => {
-  let userChatBox = document.createElement("div");
+  const userChatBox = document.createElement("div");
   userChatBox.classList.add("user-chat");
-  let userChatContent = document.createElement("div");
+  const userChatContent = document.createElement("div");
   userChatContent.classList.add("user-chat-content");
   userChatContent.innerText = userChat;
   userChatBox.appendChild(userChatContent);
@@ -45,35 +45,35 @@ const printUserChat = async (userChat) => {
 };
 
 // AIChat이 들어갈 AIChatBox를 만드는 함수
-const makeAIChatBox = (AIChat) => {
-  let AIChatBox = document.createElement("div");
-  AIChatBox.classList.add("ai-chat");
+const makeAIChatBox = (aiChat) => {
+  const aiChatBox = document.createElement("div");
+  aiChatBox.classList.add("ai-chat");
 
-  let AIImg = document.createElement("img");
-  AIImg.classList.add("ai-img");
-  AIImg.setAttribute("src", "asset/img/profile_default_cat.jpg");
-  AIChatBox.appendChild(AIImg);
+  const aiImg = document.createElement("img");
+  aiImg.classList.add("ai-img");
+  aiImg.setAttribute("src", "asset/img/profile_default_cat.jpg");
+  aiChatBox.appendChild(aiImg);
 
-  let AIChatContent = document.createElement("div");
-  AIChatContent.classList.add("ai-chat-content");
-  AIChatBox.appendChild(AIChatContent);
+  const aiChatContent = document.createElement("div");
+  aiChatContent.classList.add("ai-chat-content");
+  aiChatBox.appendChild(aiChatContent);
 
   // AI Chat의 각 단어 click 시 질문 event
-  AIChat.split(" ").forEach((element) => {
-    let AIChatElement = document.createElement("a");
-    AIChatElement.classList.add("ai-chat-element");
-    AIChatElement.addEventListener("click", function (event) {
-      apiQuestionPost(AIChat, element, dataQuestion);
+  aiChat.split(" ").forEach((element) => {
+    const aiChatElement = document.createElement("a");
+    aiChatElement.classList.add("ai-chat-element");
+    aiChatElement.addEventListener("click", function (event) {
+      apiQuestionPost(aiChat, element, dataQuestion);
     });
-    AIChatElement.innerText = element;
-    AIChatContent.appendChild(AIChatElement);
+    aiChatElement.innerText = element;
+    aiChatContent.appendChild(aiChatElement);
   });
-  $chatScreen.appendChild(AIChatBox);
+  $chatScreen.appendChild(aiChatBox);
 };
 
 // 화면에 AIChat 그려주는 함수
-const printAIChat = (AIChat) => {
-  makeAIChatBox(AIChat);
+const printAIChat = (aiChat) => {
+  makeAIChatBox(aiChat);
   keepScrollDown();
 };
 
@@ -93,9 +93,9 @@ const saveUserChat = (userChat) => {
 };
 
 // 채팅 api 요청보내는 함수
-const apiChatPost = async (AIdata) => {
+const apiChatPost = async (aiData) => {
   // 로딩 화면 시작
-  SwitchLoad();
+  switchLoad();
   const result = await fetch(url, {
     method: "POST",
     headers: {
@@ -107,14 +107,14 @@ const apiChatPost = async (AIdata) => {
     .then((res) => res.json())
     .then((res) => {
       // 로딩 화면 종료
-      SwitchLoad();
+      switchLoad();
 
       // AI 대답을 dataChat에 저장
       dataChat.push({
         role: "assistant",
         content: res.choices[0].message.content,
       });
-      AIdata.push({
+      aiData.push({
         content: res.choices[0].message.content,
       });
       printAIChat(res.choices[0].message.content);

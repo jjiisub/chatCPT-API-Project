@@ -1,5 +1,5 @@
-import { SwitchLoad } from "./loading.js";
-import { SwitchModal } from "./modal.js";
+import { switchLoad } from "./loading.js";
+import { switchModal } from "./modal.js";
 
 export { apiQuestionPost, dataQuestion };
 
@@ -31,14 +31,14 @@ const dataQuestion = [
 const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 
 // 문법 질문 api 요청 함수
-const apiQuestionPost = async (AIChat, word, dataQuestion) => {
+const apiQuestionPost = async (aiChat, word, dataQuestion) => {
   // 로딩 화면 시작
-  SwitchLoad();
+  switchLoad();
 
   // 문법 질문 저장
   dataQuestion.push({
     role: "user",
-    content: `${AIChat}에서 ${word}의 의미를 자세히 설명해줘`,
+    content: `${aiChat}에서 ${word}의 의미를 자세히 설명해줘`,
   });
 
   const result = await fetch(url, {
@@ -52,10 +52,10 @@ const apiQuestionPost = async (AIChat, word, dataQuestion) => {
     .then((res) => res.json())
     .then((res) => {
       // 로딩 화면 종료
-      SwitchLoad();
+      switchLoad();
 
       // 문법 설명 modal 실행
-      SwitchModal(res.choices[0].message.content, AIChat);
+      switchModal(res.choices[0].message.content, aiChat);
       dataQuestion.push({
         role: "assistant",
         content: res.choices[0].message.content,

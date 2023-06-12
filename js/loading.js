@@ -1,6 +1,6 @@
-export { SwitchLoad };
+export { switchLoad };
 
-function SwitchLoad() {
+function switchLoad() {
   let loaderContainer = document.querySelector(".loader-container");
   loaderContainer.classList.toggle("show");
 }
