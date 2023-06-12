@@ -32,9 +32,7 @@
 ```bash
 ├── asset
 │   ├── gif
-│   │   └── loadingImg.gif
 │   └── img
-│       └── profile_default_cat.jpg
 ├── component
 │   ├── build.js
 │   ├── chat.js
