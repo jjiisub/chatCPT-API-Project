@@ -21,5 +21,4 @@ $form.addEventListener("submit", (e) => {
   saveUserChat(userChat);
   printUserChat(userChat);
   apiChatPost(AIdata);
-  console.log(AIdata);
 });
