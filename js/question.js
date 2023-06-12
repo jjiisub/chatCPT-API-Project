@@ -1,5 +1,5 @@
 import { switchLoad } from "./loading.js";
-import { switchModal } from "./modal.js";
+import { switchAnswerModal } from "./modal.js";
 
 export { apiQuestionPost, dataQuestion };
 
@@ -55,7 +55,7 @@ const apiQuestionPost = async (aiChat, word, dataQuestion) => {
       switchLoad();
 
       // 문법 설명 modal 실행
-      switchModal(res.choices[0].message.content, aiChat);
+      switchAnswerModal(res.choices[0].message.content, aiChat);
       dataQuestion.push({
         role: "assistant",
         content: res.choices[0].message.content,

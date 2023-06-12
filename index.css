@@ -147,7 +147,7 @@ form {
   width: 60px;
 }
 .ai-img:hover {
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 .user-chat-content {
@@ -169,8 +169,8 @@ form {
 
 .ai-chat-element:hover {
   font-style: italic;
-  /* text-decoration: underline; */
-  border-bottom: 2px solid gray;
+  text-decoration: underline;
+  /* border-bottom: 2px solid gray; */
 }
 
 .loader-container {
@@ -283,7 +283,7 @@ form {
   }
 }
 
-.tmpImg {
+/* .tmpImg {
   width: 100px;
   height: 100px;
-}
+} */

@@ -1,8 +1,8 @@
-export { switchModal };
+export { switchAnswerModal };
 
 // 문법 질문 Modal switch 함수
 const Modal = document.querySelector(".modal");
-function switchModal(answer, aiChat) {
+function switchAnswerModal(answer, aiChat) {
   Modal.classList.toggle("hidden");
 
   fillModalSentence(aiChat);
@@ -10,7 +10,7 @@ function switchModal(answer, aiChat) {
 
   // 종료 버튼 event 생성
   const closeBtn = document.querySelector(".btn-close-modal");
-  closeBtn.addEventListener("click", switchModal);
+  closeBtn.addEventListener("click", switchAnswerModal);
 }
 
 // modal에 답변 내용 저장
