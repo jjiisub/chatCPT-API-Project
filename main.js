@@ -1,4 +1,4 @@
-import { printUserChat, apiChatPost } from "./chat.js";
+import { printUserChat, apiChatPost } from "./component/chat.js";
 // import { makeModalContainer } from "./build.js";
 
 const $form = document.querySelector("form");
