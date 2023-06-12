@@ -10,12 +10,43 @@
     <script src="./main.js" defer type="module"></script>
   </head>
   <body>
-    <!-- modal, loader -->
-    <div class="modal hidden">
+    <!-- modal/loader container -->
+    <div class="answer-modal hidden">
       <div class="modal-background"></div>
       <div class="modal-question ai-chat-content"></div>
       <div class="modal-content"></div>
-      <button class="btn-close-modal">close</button>
+      <button class="btn-close-answer-modal">close</button>
+    </div>
+    <div class="help-modal hidden">
+      <div class="modal-background"></div>
+      <fieldset class="character-box">
+        <div class="character">
+          <input type="radio" id="cat" name="character" checked />
+          <label for="cat">cat</label>
+        </div>
+
+        <div class="character">
+          <input type="radio" id="man" name="character" />
+          <label for="man">man</label>
+        </div>
+
+        <div class="character">
+          <input type="radio" id="woman" name="character" />
+          <label for="woman">woman</label>
+        </div>
+
+        <div class="character">
+          <input type="radio" id="robot" name="character" />
+          <label for="robot">robot</label>
+        </div>
+
+        <div class="character">
+          <input type="radio" id="else" name="character" />
+          <label for="else">else</label>
+        </div>
+      </fieldset>
+
+      <button class="btn-close-help-modal">Next</button>
     </div>
     <div class="loader-container"><img class="loading-img" src="asset/gif/loadingImg.gif" /></div>
     <!-- // modal, loader -->

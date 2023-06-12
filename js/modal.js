@@ -1,15 +1,15 @@
-export { switchAnswerModal };
+export { switchAnswerModal, switchHelpModal };
 
 // 문법 질문 Modal switch 함수
-const Modal = document.querySelector(".modal");
+const answerModal = document.querySelector(".answer-modal");
 function switchAnswerModal(answer, aiChat) {
-  Modal.classList.toggle("hidden");
+  answerModal.classList.toggle("hidden");
 
   fillModalSentence(aiChat);
   fillModalAnswer(answer);
 
   // 종료 버튼 event 생성
-  const closeBtn = document.querySelector(".btn-close-modal");
+  const closeBtn = document.querySelector(".btn-close-answer-modal");
   closeBtn.addEventListener("click", switchAnswerModal);
 }
 
@@ -28,3 +28,6 @@ function fillModalSentence(aiChat) {
     modalQuestion.innerText = aiChat;
   }
 }
+
+// 초기 화면 modal
+function switchHelpModal() {}

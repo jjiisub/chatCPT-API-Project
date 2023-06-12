@@ -146,9 +146,6 @@ form {
   height: 60px;
   width: 60px;
 }
-.ai-img:hover {
-  /* border: 2px solid black; */
-}
 
 .user-chat-content {
   background-color: rgb(255, 221, 221);
@@ -189,7 +186,8 @@ form {
   display: flex;
 }
 
-.modal {
+.answer-modal,
+.help-modal {
   width: 100%;
   height: 100%;
   display: flex;
@@ -236,7 +234,8 @@ form {
   display: none;
 }
 
-.btn-close-modal {
+.btn-close-answer-modal,
+.btn-close-help-modal {
   z-index: 2;
   font-size: large;
   font-weight: bold;
@@ -248,10 +247,27 @@ form {
   height: 46px;
 }
 
-.btn-close-modal:hover {
+.btn-close-answer-modal:hover,
+.btn-close-help-modal:hover {
   background-color: #002d70;
   border-left: 7px solid #002d70;
   border-bottom: 7px solid #002d70;
+}
+
+.character-box {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  z-index: 2;
+  background-color: white;
+}
+
+.character {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 200px;
+  border: 1px solid black;
 }
 
 @media screen and (max-width: 542px) {
