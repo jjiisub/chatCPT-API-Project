@@ -4,6 +4,7 @@ export { printUserChat, apiChatPost, saveUserChat };
 
 const $chatScreen = document.querySelector(".chat-screen");
 
+// 대화 내용 저장 변수
 const dataChat = [
   {
     role: "system",
@@ -93,6 +94,7 @@ const saveUserChat = (userChat) => {
 
 // 채팅 api 요청보내는 함수
 const apiChatPost = async (AIdata) => {
+  // 로딩 화면 시작
   SwitchLoad();
   const result = await fetch(url, {
     method: "POST",
@@ -104,7 +106,10 @@ const apiChatPost = async (AIdata) => {
   })
     .then((res) => res.json())
     .then((res) => {
+      // 로딩 화면 종료
       SwitchLoad();
+
+      // AI 대답을 dataChat에 저장
       dataChat.push({
         role: "assistant",
         content: res.choices[0].message.content,

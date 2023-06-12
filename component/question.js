@@ -3,6 +3,7 @@ import { SwitchModal } from "./modal.js";
 
 export { apiQuestionPost, dataQuestion };
 
+// 문법 질문 저장 변수
 const dataQuestion = [
   {
     role: "system",
@@ -31,9 +32,10 @@ const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 
 // 문법 질문 api 요청 함수
 const apiQuestionPost = async (AIChat, word, dataQuestion) => {
-  // SwitchLoad function 실행
+  // 로딩 화면 시작
   SwitchLoad();
 
+  // 문법 질문 저장
   dataQuestion.push({
     role: "user",
     content: `${AIChat}에서 ${word}의 의미를 자세히 설명해줘`,
@@ -49,17 +51,15 @@ const apiQuestionPost = async (AIChat, word, dataQuestion) => {
   })
     .then((res) => res.json())
     .then((res) => {
-      // SwitchLoad 종료
+      // 로딩 화면 종료
       SwitchLoad();
 
-      // // 문법 설명 modal 실행
+      // 문법 설명 modal 실행
       SwitchModal(res.choices[0].message.content, AIChat);
       dataQuestion.push({
         role: "assistant",
         content: res.choices[0].message.content,
       });
-
-      console.log("dataQ", dataQuestion);
     })
     .catch((err) => {
       console.log(err);

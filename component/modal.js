@@ -1,6 +1,6 @@
 export { SwitchModal };
 
-// Modal
+// 문법 질문 Modal 함수
 let Modal = document.querySelector(".modal");
 function SwitchModal(message, AIChat) {
   Modal.classList.toggle("hidden");
@@ -16,5 +16,6 @@ function SwitchModal(message, AIChat) {
   }
 }
 
+// 종료 버튼
 let closeBtn = document.querySelector(".btn-close-modal");
 closeBtn.addEventListener("click", SwitchModal);
