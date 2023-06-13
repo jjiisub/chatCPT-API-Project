@@ -66,7 +66,7 @@ header > .github {
   padding: 10px;
   border-radius: 10px 10px 0 0;
   border: 1px solid #ddd;
-  height: 650px;
+  height: 90%;
   width: 900px;
   overflow: auto;
   /* mask-image: linear-gradient(180deg, transparent 0%, black 10%);
@@ -263,7 +263,7 @@ form {
 }
 
 .btn-close-help-modal {
-  width: 382px;
+  width: 80px;
   margin-top: 20px;
   border-radius: 10px;
 }
@@ -284,7 +284,7 @@ form {
 .input-situation {
   margin-top: 20px;
   border-radius: 10px;
-  width: 755px;
+  width: 740px;
   /* padding-top: 10px;
   padding-bottom: 10px; */
   padding: 10px 20px 10px 20px;
@@ -373,6 +373,7 @@ input[type="radio"] {
     width: 80%;
     word-wrap: break-word;
     word-break: break-all;
+    height: fit-content;
   }
 }
 
