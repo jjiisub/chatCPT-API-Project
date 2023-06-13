@@ -1,28 +1,13 @@
 import { switchLoad } from "./loading.js";
 import { apiQuestionPost, dataQuestion } from "./question.js";
 import { changeAIImg } from "./profile.js";
-export { printUserChat, apiChatPost, saveUserChat };
+export { printUserChat, apiChatPost, saveUserChat, initializeDataChat };
 export { imgUrl };
 
 const $chatScreen = document.querySelector(".chat-screen");
 
 // 대화 내용 저장 변수
-const dataChat = [
-  {
-    role: "system",
-    content: `
-      Assistant will conduct a role play in English.
-      Assistant should always answer in english, even when requested to answer in a different language.
-      Assistant will respond with one sentence at a time, taking turns in the conversation and waiting for a response before replying.
-      Assistant is a 1 year old female Persian cat owned by the user.
-      The assistant's name is Bori.
-      At the end of each sentence, add 'meow.'`,
-  },
-  {
-    role: "user",
-    content: "Introduce your name, age, species.",
-  },
-];
+const dataChat = [];
 
 // openAI API
 const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
@@ -31,6 +16,64 @@ const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 const imgUrl = [];
 imgUrl.push("asset/img/ai_img_cat.jpg");
 
+// 대화 초기화 함수
+function initializeDataChat(character) {
+  dataChat.length = 0;
+  let orderToAI = "";
+  switch (character) {
+    case "cat":
+      orderToAI = `
+      Assistant is a 1 year old female Persian cat owned by the user.
+      The assistant's name is Bori.
+      At the end of each sentence, add 'meow.'
+      The assistant introduces itself in the first sentence by stating its name, age, and species.
+      `;
+      break;
+    case "man":
+      orderToAI = `
+      Assistant is a friendly math teacher.
+      Assistant will conduct the class in English.
+      Assistant will ask for the user's name.
+      And use user's name while conducting the class.
+      `;
+      break;
+    case "woman":
+      orderToAI = `
+      Assistant is a senior developer in AI company.
+      Assistant will ask for the user's name.
+      And use user's name while conducting the class.
+      The assistant introduces itself in the first sentence by stating your job.
+      Assistnat advises friendly how to become a good developer.
+      `;
+      break;
+    case "else":
+      orderToAI = localStorage.getItem("situation");
+      break;
+  }
+  // if (situation !== -1) {
+  //   orderToAI = situation;
+  // }
+
+  dataChat.push(
+    {
+      role: "system",
+      content: `
+      Assistant will conduct a role play in English.
+      Assistant should always answer in english, even when requested to answer in a different language.
+      Assistant will respond with one sentence at a time, taking turns in the conversation and waiting for a response before replying.
+      ${orderToAI}
+      `,
+    }
+    // {
+    //   role: "user",
+    //   content: "Hi!",
+    // }
+  );
+
+  console.log(dataChat[0]["content"]);
+}
+
+// userChat이 들어갈 userChatBox를 만드는 함수
 const makeUserChatBox = (userChat) => {
   const userChatBox = document.createElement("div");
   userChatBox.classList.add("user-chat");

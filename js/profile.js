@@ -1,4 +1,4 @@
-import { imgUrl } from "./chat.js";
+import { imgUrl, initializeDataChat } from "./chat.js";
 import { switchLoad } from "./loading.js";
 import { closeHelpModal, openHelpModal, selectedCheck } from "./modal.js";
 export { setAIImg, selectAIImg, saveAIImg, changeAIImg };
@@ -6,7 +6,7 @@ export { setAIImg, selectAIImg, saveAIImg, changeAIImg };
 // 업로드된 img를 localStorage에 저장
 function saveAIImg(newImgUrl) {
   //   imgUrl.push(newImgUrl);
-  localStorage.clear();
+  // localStorage.clear();
   localStorage.setItem(`aiImg`, newImgUrl);
 }
 
@@ -20,6 +20,7 @@ function setAIImg() {
     });
     imgUrl.push(imgFromLocalStorage);
     closeHelpModal();
+    initializeDataChat(localStorage.getItem("character"), -1);
   }
 }
 
@@ -75,16 +76,25 @@ function selectAIImg(event) {
     selectedCheck();
     const $btnAIImgClose = document.querySelector(".ai-img-close");
     $btnAIImgClose.classList.remove("hidden");
+
+    const $characterSituation = document.querySelector(".input-situation");
+    $characterSituation.removeAttribute("disabled");
+    $characterSituation.setAttribute("placeholder", "AI의 역할을 입력해주세요");
+    $characterSituation.setAttribute("required", true);
+    $characterSituation.setAttribute("autofocus", true);
+    $characterSituation.value = "";
   };
   reader.readAsDataURL(file);
 }
 
-// const $aiImg = document.querySelectorAll(".ai-img");
+// ai-img 클릭 시 발생하는 함수 -> help modal 재실행
 function changeAIImg() {
   localStorage.clear();
-  openHelpModal();
+  // openHelpModal();
+  location.reload();
 }
 
+// web LocalStorage의 용량 제한 체크
 function fileSizeCheck(file) {
   const maxSize = 5 * 1024 * 1024;
   if (file.size >= maxSize) {

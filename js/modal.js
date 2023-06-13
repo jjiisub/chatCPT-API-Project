@@ -1,4 +1,5 @@
 export { switchAnswerModal, openHelpModal, closeHelpModal, selectedCheck };
+import { initializeDataChat } from "./chat.js";
 import { setAIImg, selectAIImg, saveAIImg } from "./profile.js";
 
 const $answerModal = document.querySelector(".answer-modal");
@@ -70,15 +71,21 @@ $characterSelect.addEventListener("click", function () {
   // img src 저장
   switch (radioValue.id) {
     case "cat":
+      localStorage.setItem("character", "cat");
       saveAIImg("./asset/img/ai_img_cat.jpg");
       break;
     case "man":
+      localStorage.setItem("character", "man");
       saveAIImg("./asset/img/ai_img_man.png");
       break;
     case "woman":
+      localStorage.setItem("character", "woman");
       saveAIImg("./asset/img/ai_img_woman.png");
       break;
     case "else":
+      const $characterSituation = document.querySelector(".input-situation");
+      localStorage.setItem("character", "else");
+      localStorage.setItem("situation", document.querySelector(".input-situation").value);
       break;
   }
   setAIImg();
@@ -86,6 +93,7 @@ $characterSelect.addEventListener("click", function () {
 
 // help modal character select 시 배경 변화 event
 const $characterList = document.querySelectorAll('input[type="radio"][name="character"]');
+const $characterSituation = document.querySelector(".input-situation");
 $characterList.forEach((character) => {
   document.querySelector(".character-box").addEventListener("change", function () {
     if (localStorage.getItem("aiImg") !== null) {
@@ -94,6 +102,7 @@ $characterList.forEach((character) => {
       }
     } else if (character.checked) {
       character.parentNode.classList.add("selected");
+      $characterSituation.value = character.value;
     } else if (!character.checked) {
       character.parentNode.classList.remove("selected");
     }
