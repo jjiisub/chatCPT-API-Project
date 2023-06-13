@@ -28,7 +28,7 @@ const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`;
 
 // AI profile img URL
 const imgUrl = [];
-imgUrl.push("asset/img/profile_default_cat.jpg");
+imgUrl.push("asset/img/ai_img_cat.jpg");
 
 const makeUserChatBox = (userChat) => {
   const userChatBox = document.createElement("div");

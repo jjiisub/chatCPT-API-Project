@@ -2,7 +2,7 @@ import { printUserChat, apiChatPost, saveUserChat } from "./js/chat.js";
 import { uploadAIImg, setAIImg } from "./js/profile.js";
 
 const $form = document.querySelector("form");
-const $input = document.querySelector("input");
+const $input = document.querySelector(".chat-input-text");
 const $imgUpload = document.querySelector(".ai_img_upload");
 
 // 사용자의 질문 1개
@@ -25,6 +25,7 @@ $form.addEventListener("submit", (e) => {
   $input.value = null;
   saveUserChat(userChat);
   printUserChat(userChat);
+  console.log(userChat);
   apiChatPost(aiData);
 });
 
