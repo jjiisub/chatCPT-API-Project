@@ -17,24 +17,24 @@
       <div class="modal-content"></div>
       <button class="btn-close-answer-modal">close</button>
     </div>
-    <div class="help-modal hidden">
+    <div class="help-modal">
       <div class="modal-background"></div>
       <fieldset class="character-box">
-        <label for="cat" class="character">
-          <p>BORI (cat)</p>
+        <label for="cat" class="character selected">
           <img class="ai-img" src="./asset/img/ai_img_cat.jpg" alt="" />
+          <p>BORI (cat)</p>
           <input type="radio" id="cat" name="character" checked />
         </label>
 
         <label for="man" class="character">
-          <p>Cheol-Su (human)</p>
           <img class="ai-img" src="./asset/img/ai_img_man.png" alt="" />
+          <p>Cheol-Su (human)</p>
           <input type="radio" id="man" name="character" />
         </label>
 
         <label for="woman" class="character">
-          <p>Yeong-Hee (human)</p>
           <img class="ai-img" src="./asset/img/ai_img_woman.png" alt="" />
+          <p>Yeong-Hee (human)</p>
           <input type="radio" id="woman" name="character" />
         </label>
 
@@ -45,8 +45,9 @@
         </label> -->
 
         <label for="else" class="character">
+          <img class="ai-img-uploaded" src="./asset/svg/upload.svg" alt="" />
           <p>else</p>
-          <img class="ai-img-upload" src="./asset/svg/upload.svg" alt="" />
+          <input type="file" id="else" class="input_ai_img" accept="image/*" />
           <input type="radio" id="else" name="character" />
         </label>
       </fieldset>
@@ -92,6 +93,5 @@
     <footer>
       <p>Copyright 2023. Jiseop All rights reserved</p>
     </footer>
-    <input type="file" class="ai_img_upload" accept="image/*" />
   </body>
 </html>

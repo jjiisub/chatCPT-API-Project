@@ -145,12 +145,6 @@ form {
   border: 3px solid black;
   height: 60px;
   width: 60px;
-  padding: 0px;
-}
-
-.ai-img-upload {
-  height: 60px;
-  width: 60px;
 }
 
 .user-chat-content {
@@ -269,16 +263,48 @@ form {
   padding: 0;
   border: 0;
   z-index: 2;
-  background-color: white;
+  gap: 20px;
 }
 
 .character {
+  background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 200px;
-  width: 200px;
-  border: 1px solid black;
+  width: 180px;
+  border: 0.5px solid #ddd;
+  border-radius: 20px;
+}
+
+.character > .ai-img,
+.ai-img-uploaded {
+  height: 100px;
+  width: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.character:hover {
+  /* border: 1px solid gray; */
+  /* border-bottom: 5px solid #999999; */
+  background-color: #c9ceff;
+}
+
+.selected {
+  background-color: rgb(216, 249, 151);
+}
+
+/* .ai-img-uploaded {
+  margin-top: 45px;
+  margin-bottom: 45px;
+  height: 50px;
+  width: 50px;
+} */
+
+.input_ai_img,
+input[type="radio"] {
+  display: none;
 }
 
 @media screen and (max-width: 542px) {
