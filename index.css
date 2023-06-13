@@ -141,9 +141,14 @@ form {
 }
 
 .ai-img {
-  /* border-radius: 100%; */
   border-radius: 100%;
   border: 3px solid black;
+  height: 60px;
+  width: 60px;
+  padding: 0px;
+}
+
+.ai-img-upload {
   height: 60px;
   width: 60px;
 }

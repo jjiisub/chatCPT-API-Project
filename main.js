@@ -11,13 +11,18 @@ let userChat;
 // AI의 대답 목록
 const aiData = [];
 
+// set img from LocalStorage
+setAIImg();
+
 // input에 입력된 질문 받아오는 함수
 $input.addEventListener("input", (e) => {
   userChat = e.target.value;
 });
 
-// set img from LocalStorage
-setAIImg();
+// profile img upload
+$imgUpload.addEventListener("change", function (event) {
+  uploadAIImg(event);
+});
 
 // submit
 $form.addEventListener("submit", (e) => {
@@ -25,11 +30,5 @@ $form.addEventListener("submit", (e) => {
   $input.value = null;
   saveUserChat(userChat);
   printUserChat(userChat);
-  console.log(userChat);
   apiChatPost(aiData);
-});
-
-// profile img upload
-$imgUpload.addEventListener("change", function (event) {
-  uploadAIImg(event);
 });
