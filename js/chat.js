@@ -1,5 +1,6 @@
 import { switchLoad } from "./loading.js";
 import { apiQuestionPost, dataQuestion } from "./question.js";
+import { changeAIImg } from "./profile.js";
 export { printUserChat, apiChatPost, saveUserChat };
 export { imgUrl };
 
@@ -57,6 +58,7 @@ const makeAIChatBox = (aiChat) => {
   const aiImg = document.createElement("img");
   aiImg.classList.add("ai-img");
   aiImg.setAttribute("src", imgUrl[imgUrl.length - 1]);
+  aiImg.addEventListener("click", changeAIImg);
   aiChatBox.appendChild(aiImg);
 
   const aiChatContent = document.createElement("div");

@@ -1,5 +1,5 @@
 import { printUserChat, apiChatPost, saveUserChat } from "./js/chat.js";
-import { uploadAIImg, setAIImg, selectAIImg, saveAIImg } from "./js/profile.js";
+import { setAIImg, selectAIImg, saveAIImg } from "./js/profile.js";
 // import { switchHelpModal } from "./js/modal.js";
 
 const $form = document.querySelector("form");
@@ -27,4 +27,13 @@ $form.addEventListener("submit", (e) => {
   saveUserChat(userChat);
   printUserChat(userChat);
   apiChatPost(aiData);
+});
+
+const $btnAIImgClose = document.querySelector(".ai-img-close");
+$btnAIImgClose.addEventListener("click", function () {
+  $btnAIImgClose.classList.add("hidden");
+  localStorage.clear();
+  document.querySelector(".ai-img-uploaded").setAttribute("src", "./asset/svg/upload.svg");
+  document.querySelector(".ai-img-uploaded").classList.remove("ai-img");
+  $btnAIImgClose.parentNode.classList.remove("selected");
 });

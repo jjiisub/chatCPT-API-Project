@@ -1,4 +1,4 @@
-export { switchAnswerModal, openHelpModal, closeHelpModal };
+export { switchAnswerModal, openHelpModal, closeHelpModal, selectedCheck };
 import { setAIImg, selectAIImg, saveAIImg } from "./profile.js";
 
 const $answerModal = document.querySelector(".answer-modal");
@@ -79,7 +79,6 @@ $characterSelect.addEventListener("click", function () {
       saveAIImg("./asset/img/ai_img_woman.png");
       break;
     case "else":
-      // saveAIImg("./asset/img/ai_img_woman.png");
       break;
   }
   setAIImg();
@@ -88,9 +87,11 @@ $characterSelect.addEventListener("click", function () {
 // help modal character select 시 배경 변화 event
 const $characterList = document.querySelectorAll('input[type="radio"][name="character"]');
 $characterList.forEach((character) => {
-  document.body.addEventListener("change", function () {
-    if ($imgUpload.files.length > 0) {
-      character.parentNode.classList.remove("selected");
+  document.querySelector(".character-box").addEventListener("change", function () {
+    if (localStorage.getItem("aiImg") !== null) {
+      if (character.id !== "else") {
+        character.parentNode.classList.remove("selected");
+      }
     } else if (character.checked) {
       character.parentNode.classList.add("selected");
     } else if (!character.checked) {
@@ -98,3 +99,14 @@ $characterList.forEach((character) => {
     }
   });
 });
+
+function selectedCheck() {
+  const $characterList = document.querySelectorAll('input[type="radio"][name="character"]');
+  $characterList.forEach((character) => {
+    if (localStorage.getItem("aiImg") !== null) {
+      if (character.id !== "else") {
+        character.parentNode.classList.remove("selected");
+      }
+    }
+  });
+}
