@@ -256,6 +256,7 @@ form {
 
 .character-box {
   display: flex;
+  justify-content: center;
   /* width: fit-content; */
   /* height: fit-content; */
   flex-wrap: wrap;
