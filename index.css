@@ -43,7 +43,10 @@ footer {
 }
 
 header > .logo {
+  padding-top: 5px;
   padding-left: 30px;
+  font-size: 180%;
+  font-weight: 700;
 }
 header > .github {
   padding-right: 30px;

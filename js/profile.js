@@ -1,5 +1,6 @@
 import { imgUrl } from "./chat.js";
 import { switchLoad } from "./loading.js";
+import { closeHelpModal } from "./modal.js";
 export { uploadAIImg, setAIImg, selectAIImg, saveAIImg };
 
 // 업로드된 img를 localStorage에 저장
@@ -17,6 +18,7 @@ function setAIImg() {
       imgElement.setAttribute("src", imgFromLocalStorage);
     });
     imgUrl.push(imgFromLocalStorage);
+    closeHelpModal();
   }
 }
 
