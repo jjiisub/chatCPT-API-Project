@@ -1,5 +1,5 @@
-import { printUserChat, apiChatPost, saveUserChat, initializeDataChat } from "./js/chat.js";
-import { setAIImg, selectAIImg, saveAIImg } from "./js/profile.js";
+import { printUserChat, apiChatPost, saveUserChat } from "./js/chat.js";
+import { setAIImg } from "./js/profile.js";
 // import { switchHelpModal } from "./js/modal.js";
 
 const $form = document.querySelector("form");
