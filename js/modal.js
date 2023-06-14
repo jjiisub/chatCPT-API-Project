@@ -102,6 +102,7 @@ $characterList.forEach((character) => {
   });
 });
 
+// 중복 기능 제거 필요
 function selectedCheck() {
   const $characterList = document.querySelectorAll('input[type="radio"][name="character"]');
   $characterList.forEach((character) => {

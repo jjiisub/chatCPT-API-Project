@@ -28,12 +28,3 @@ $form.addEventListener("submit", (e) => {
   printUserChat(userChat);
   apiChatPost(aiData);
 });
-
-const $btnAIImgClose = document.querySelector(".ai-img-close");
-$btnAIImgClose.addEventListener("click", function () {
-  $btnAIImgClose.classList.add("hidden");
-  localStorage.clear();
-  document.querySelector(".ai-img-uploaded").setAttribute("src", "./asset/svg/upload.svg");
-  document.querySelector(".ai-img-uploaded").classList.remove("ai-img");
-  $btnAIImgClose.parentNode.classList.remove("selected");
-});
