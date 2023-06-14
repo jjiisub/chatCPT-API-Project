@@ -34,7 +34,6 @@
 ├── index.css
 ├── index.html
 ├── js
-│   ├── build.js
 │   ├── chat.js
 │   ├── loading.js
 │   ├── modal.js
