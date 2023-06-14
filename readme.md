@@ -25,7 +25,7 @@
 
 - https://vboriv.github.io/ORMI_project_1/
 
-## 3. 프로젝트 구조와 개발 일정
+## 3. 프로젝트 구조와 페이지 데모
 
 ### 3.1 프로젝트 구조
 
@@ -43,7 +43,7 @@
 └── readme.md
 ```
 
-## 4. 페이지 데모
+### 3.2 페이지 데모
 
 <img width="2048" alt="help_modal" src="https://github.com/vBORIv/ORMI_project_1/assets/89283288/c87f1014-621c-4553-ad01-00df07f961c3">
 
