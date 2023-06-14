@@ -34,13 +34,6 @@ function fillModalSentence(aiChat) {
   }
 }
 
-// help modal
-// function switchHelpModal() {
-//   $helpModal.classList.toggle("hidden");
-// }
-// 종료 버튼 event 생성
-// $helpModalCloseBtn.addEventListener("click", switchHelpModal);
-
 function openHelpModal() {
   $helpModal.classList.remove("hidden");
 }

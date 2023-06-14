@@ -50,9 +50,6 @@ function initializeDataChat(character) {
       orderToAI = localStorage.getItem("situation");
       break;
   }
-  // if (situation !== -1) {
-  //   orderToAI = situation;
-  // }
 
   dataChat.push(
     {

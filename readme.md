@@ -31,16 +31,15 @@
 
 ```bash
 ├── asset
-│   ├── gif
-│   └── img
-├── component
+├── index.css
+├── index.html
+├── js
 │   ├── build.js
 │   ├── chat.js
 │   ├── loading.js
 │   ├── modal.js
+│   ├── profile.js
 │   └── question.js
-├── index.html
-├── index.css
 ├── main.js
 └── readme.md
 ```
