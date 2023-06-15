@@ -51,6 +51,9 @@
 
 <img width="2048" alt="answer_modal" src="https://github.com/vBORIv/ORMI_project_1/assets/89283288/5c91de36-2308-4334-8928-268e75dd140c">
 
-![반응형](https://github.com/vBORIv/ORMI_project_1/assets/89283288/ee164de7-225c-442e-a8d1-ae2b2e88ca5a)
+![반응형](https://github.com/vBORIv/ORMI_project_1/assets/89283288/1e7df9f8-6882-4b15-8c3d-9a69adf4b2f9)
 
-![캐릭터 선택](https://github.com/vBORIv/ORMI_project_1/assets/89283288/0b620688-6748-4168-b344-c56433c94ef4)
+![질문 로딩](https://github.com/vBORIv/ORMI_project_1/assets/89283288/13791036-8bfa-495c-bf2a-d473d667c1a0)
+
+![채팅 로딩](https://github.com/vBORIv/ORMI_project_1/assets/89283288/ea970a0d-cc6e-4ed4-883f-01826aa48906)
+
