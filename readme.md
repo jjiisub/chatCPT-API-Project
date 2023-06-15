@@ -57,18 +57,6 @@
 
 <img width="2048" alt="answer_modal" src="https://github.com/vBORIv/ORMI_project_1/assets/89283288/5c91de36-2308-4334-8928-268e75dd140c">
 
-#### 반응형
-
-![반응형](https://github.com/vBORIv/ORMI_project_1/assets/89283288/1e7df9f8-6882-4b15-8c3d-9a69adf4b2f9)
-
-#### 질문 로딩
-
-![질문 로딩](https://github.com/vBORIv/ORMI_project_1/assets/89283288/13791036-8bfa-495c-bf2a-d473d667c1a0)
-
-#### 채팅 로딩
-
-![채팅 로딩](https://github.com/vBORIv/ORMI_project_1/assets/89283288/ea970a0d-cc6e-4ed4-883f-01826aa48906)
-
 #### 보리 채팅
 
 ![보리 채팅](https://github.com/vBORIv/ORMI_project_1/assets/89283288/b1c43bf3-1d94-476a-99b5-21d524a2f171)
@@ -81,8 +69,30 @@
 
 <img width="2048" alt="철수 채팅" src="https://github.com/vBORIv/ORMI_project_1/assets/89283288/5e985794-602d-47c4-b122-c8790795aa9d">
 
-#### 문법 질문
+---
 
-<img width="2048" alt="문법 질문" src="https://github.com/vBORIv/ORMI_project_1/assets/89283288/dd3b366b-501d-4585-935b-b556e5db210e">
+GIF
 
-#### 동적 버튼
+#### 반응형
+
+![반응형](https://github.com/vBORIv/ORMI_project_1/assets/89283288/1e7df9f8-6882-4b15-8c3d-9a69adf4b2f9)
+
+#### 질문 로딩
+
+![질문 로딩](https://github.com/vBORIv/ORMI_project_1/assets/89283288/13791036-8bfa-495c-bf2a-d473d667c1a0)
+
+#### 채팅 로딩
+
+![채팅 로딩](https://github.com/vBORIv/ORMI_project_1/assets/89283288/ea970a0d-cc6e-4ed4-883f-01826aa48906)
+
+#### 캐릭터 선택
+
+#### 이미지 업로드
+
+#### 채팅 화면
+
+#### 동적 버튼 (캐릭터 선택)
+
+#### 동적 버튼 (채팅 전송)
+
+#### 동적 버튼 (질문 닫기)
