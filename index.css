@@ -342,7 +342,7 @@ input[type="radio"] {
   background-color: rgb(238, 163, 163);
 }
 
-@media screen and (max-width: 542px) {
+@media (max-width: 900px) {
   .chat-page {
     height: 90%;
   }
@@ -350,7 +350,18 @@ input[type="radio"] {
   .chat-input {
     width: 90%;
   }
+  .input-situation {
+    width: 80%;
+    word-wrap: break-word;
+    word-break: break-all;
+    height: fit-content;
+    font-size: 90%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
 
+@media screen and (max-width: 542px) {
   .ai-chat-content,
   .user-chat-content {
     font-size: 120%;
@@ -368,15 +379,6 @@ input[type="radio"] {
 
   .modal-question.ai-chat-content {
     width: 80%;
-  }
-  .input-situation {
-    width: 80%;
-    word-wrap: break-word;
-    word-break: break-all;
-    height: fit-content;
-    font-size: 90%;
-    padding-left: 5px;
-    padding-right: 5px;
   }
 }
 

@@ -50,3 +50,5 @@
 <img width="1024" alt="chat_page" src="https://github.com/vBORIv/ORMI_project_1/assets/89283288/119a3865-4a3e-4112-9fd4-2ddae8bbd65c">
 
 <img width="2048" alt="answer_modal" src="https://github.com/vBORIv/ORMI_project_1/assets/89283288/5c91de36-2308-4334-8928-268e75dd140c">
+
+https://github.com/vBORIv/ORMI_project_1/assets/89283288/2b87708e-528b-4b23-8853-3a11e8f0f321
