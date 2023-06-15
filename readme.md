@@ -52,3 +52,5 @@
 <img width="2048" alt="answer_modal" src="https://github.com/vBORIv/ORMI_project_1/assets/89283288/5c91de36-2308-4334-8928-268e75dd140c">
 
 ![반응형](https://github.com/vBORIv/ORMI_project_1/assets/89283288/ee164de7-225c-442e-a8d1-ae2b2e88ca5a)
+
+![캐릭터 선택](https://github.com/vBORIv/ORMI_project_1/assets/89283288/0b620688-6748-4168-b344-c56433c94ef4)
