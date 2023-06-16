@@ -88,17 +88,23 @@ GIF
 #### 캐릭터 선택
 
 #### 이미지 업로드
+
 ![이미지_업로드_AdobeExpress](https://github.com/vBORIv/ORMI_project_1/assets/89283288/9ef99ed7-cd7a-447b-baa8-b0b692050dd9)
 
 #### 채팅 화면
+
 ![채팅_화면_AdobeExpress](https://github.com/vBORIv/ORMI_project_1/assets/89283288/9bf957bc-7796-44d4-a6af-ec330f9fd1fb)
 
 #### 동적 버튼 (캐릭터 선택)
+
 ![캐릭터_선택_AdobeExpress](https://github.com/vBORIv/ORMI_project_1/assets/89283288/b2c53d93-bba8-4541-9cc4-15a007103a94)
 
 #### 동적 버튼 (채팅 전송)
+
 ![채팅_전송_버튼_AdobeExpress](https://github.com/vBORIv/ORMI_project_1/assets/89283288/2902faa4-a9a1-4a8e-85e4-3a1de91933f8)
 
 #### 동적 버튼 (질문 닫기)
+
 ![질문_닫기_버튼_AdobeExpress](https://github.com/vBORIv/ORMI_project_1/assets/89283288/a7b84f7f-24b6-4071-9dac-0172f75bb495)
 
+####
